@@ -1,0 +1,473 @@
+@import "./same";
+@import "./variable";
+
+header {
+    background-color: $mainbgcolor;
+    position: relative;
+}
+
+.navbar {
+    width: 100%;
+    display: grid;   
+    grid-template-columns: 0.4fr 1fr;
+    height: 70px;
+    @media (max-width: 700px) {
+        grid-template-columns: 0.5fr 1.1fr;
+        height: 60px;
+    }
+    @media (max-width: 650px) {
+        grid-template-columns: 0.4fr 1.1fr;
+        height: 60px;
+    }
+
+    @media (max-width: 550px) {
+        grid-template-columns: 0.5fr 1fr;
+        height: 55px;
+    }
+
+    @media (max-width: 350px) {
+        grid-template-columns: 0.6fr 1fr;
+        height: 55px;
+    }
+    .logo {
+        display: flex; justify-content: flex-start; align-items: center;
+        gap: 5%;
+        @media (max-width: 950px) {
+            gap: 4%;
+            font-size: 15px;
+        }
+        @media (max-width: 850px) {
+            font-size: 15px;
+        }
+
+        @media (max-width: 650px) {
+            font-size: 13px;
+        }
+        h2 a{
+            color: white;
+            &:hover {
+                color: $primarycolor;
+            }
+        }
+        h2 ~ a {
+            width: 11%;
+            height: 35%;
+            background-color: white;
+            color: $logobackground;
+            display: flex; justify-content: center; align-items: center;
+            &:hover {
+                background-color: $primarycolor;
+            }
+            @media (max-width: 650px) {
+                display: none;
+            }
+        }
+        }
+        
+    .right {
+        display: flex; align-items: center; gap: 22%; justify-content: flex-end;
+        // background-color: brown;
+        @media (max-width: 800px) {
+            gap: 20%;
+        }
+        @media (max-width: 750px) {
+            gap: 15%;
+        }
+
+        @media (max-width: 600px) {
+            gap: 15%;
+        }
+        
+        #menu {
+            display: none;
+        }
+        label {
+            display: none;
+            @media (max-width: 600px) {
+                display: block;
+                color: white;
+            }
+        }
+        & .ullar {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            display: flex; align-items: center; gap: 10%;             
+                li {
+                    a {
+                        color: #F6F8FC;
+                        &:hover {
+                            color: $primarycolor;
+                        }
+                    }
+                }
+                li ~ a {
+                    color: $logobackground;
+                    &:hover {
+                        color: $primarycolor;
+                    }
+                    @media (max-width: 750px) {
+                        display: none;
+                    }
+                }
+            @media (max-width: 950px){
+                font-size: 1rem;
+                gap: 9%;
+            }
+            @media (max-width: 900px){
+                font-size: 0.9rem;
+                gap: 7%;
+            }
+            @media (max-width: 700px){
+                font-size: 0.9rem;
+                gap: 5%;
+            }
+            @media (max-width: 600px){
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                left: -100vw;right: 0;bottom: 0;
+                flex-direction: column; align-items: center; justify-content: center;
+                background-color: $mainbgcolor;
+                transition: all 0.5s ease-in-out;
+                font-size: 1.5rem;
+            }
+            }
+        #menu:checked ~ .ullar {
+            left: 0;
+        }
+        .order {
+                display: flex; justify-content: space-between; align-items: center; gap: 5%;
+                a {
+                    font-size: 1rem;
+                    padding: 0.9rem 1.4rem;
+                    background-color: white;
+                    font-family: 'Cardo', serif;
+                    color: $logobackground;
+                    &:hover {
+                        background-color: $primarycolor;
+                    }
+                    @media (max-width: 950px) {
+                        padding: 0.8rem 1.2rem;
+                        font-size: 0.9rem;
+                    }
+                    @media (max-width: 900px) {
+                        padding: 0.6rem 1rem;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+}
+
+.showcase {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    height: calc(100vh - 70px);
+    font-family: 'Cardo', serif;
+    color: white;
+    @media (max-width: 850px) {
+        height: 150vh ;
+        display: flex; flex-direction: column; justify-content: start; align-items: center; 
+    }
+    @media (max-width: 750px){
+        height: 145vh;
+    }
+    @media (max-width: 600px){
+        margin-top: 70px;
+        height: 120vh;
+    }
+    @media (max-width: 460px){
+        height: 125vh;
+    }
+    @media (max-width: 420px){
+        height: 120vh;
+    }
+    @media (max-width: 400px){
+        height: 115vh;
+    }
+    @media (max-width: 370px){
+        height: 110vh;
+    }
+    @media (max-width: 320px){
+        height: 105vh;
+    }
+}
+
+.showleft {
+
+    display: flex; flex-direction: column; justify-content: center; align-items: start;
+    
+    .welcome {
+        width: 80%;
+        margin-top: 15%;
+        display: flex; justify-content: start; align-items: center; gap: 2%;
+        .chiziq {
+            padding: 0 1rem;
+            border-bottom: 1px solid $primarycolor;
+        }
+        h3{
+            font-weight: 400;
+            font-size: 1.4rem;
+        }
+        @media (max-width: 850px) {
+            justify-content: center;
+        }
+    }
+    h1{
+        width: 80%;
+        font-weight: 400;
+        font-size: 3rem;
+        margin: 2% 0;
+    }
+    p {
+        width: 80%;
+        font-family: 'Inter', sans-serif;
+        color: $descriptioncolor;
+        font-size: 0.9rem;
+        font-weight: 200;
+    }
+    .tugmalar {
+        width: 85%;
+        margin-bottom: 2%;
+        @include tugma();
+        a {
+            color: white;
+            display: inline-block;
+            margin: 5% 3% 3% 3%;
+            border-bottom: 1px solid  white;
+            &:hover {
+                padding: 2% 3%;
+                margin: 0;
+            }
+        }
+    }
+
+    .pages {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 25%;
+        margin-bottom: 4%;
+        .page {
+            span {
+                display: flex; justify-content: space-between; align-items: center; gap: 15px;
+                background-color: $primarycolor;
+                margin-bottom: 5%;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                h4 {
+                    padding-left: 150%;
+                }
+            }
+            p {
+                padding-left: 12%;
+            }
+        }
+    }
+    @media (max-width: 1000px) {
+        h1 {
+            font-size: 2.7rem;
+        }
+    }
+    @media (max-width: 950px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+    @media (max-width: 900px) {
+        h1 {
+            font-size: 2rem;
+            width: 90%;
+        }
+        .pages {
+            grid-template-columns: repeat(2, 1fr); row-gap: 15%;
+        }
+    }
+    @media (max-width: 850px) {
+        align-items: center;
+        .welcome {
+            width: 100%;
+        }
+        h1, p {
+            width: 100%;
+            text-align: center;
+        }
+        .tugmalar {
+            width: 100%;
+            display: flex; justify-content: center;
+        }
+        .pages {
+            width: 60%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+    }
+    @media (max-width: 750px) {
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+    @media (max-width: 650px) {
+        .pages {
+            width: 70%;
+            .page {
+                span {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+    }
+    @media (max-width: 600px) {
+        .welcome {
+            margin-top: -10%;
+        }
+        .pages {
+            width: 80%;
+            .page {
+                span {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+        h1 {
+            font-size: 1.7rem;
+        }
+    }
+    @media (max-width: 550px) {
+        .pages {
+            gap: 10%;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+    @media (max-width: 500px) {
+        .pages {
+            width: 85%;
+        }
+    }
+    @media (max-width: 450px) {
+        .pages {
+            width: 90%;
+        }
+    }
+}
+
+.showright {
+    height: calc(100vh - 90px);
+    img {
+        width: 100%;
+        max-height: 100%;
+    }
+}
+
+.tillfooter {
+    background-color: $autohorbgcolor;
+    .author {
+        display: flex; flex-direction: column; align-items: center;
+        .title {
+            @include titles();
+            margin-top: 10%;
+        }
+        .line{
+            @include line();
+        }
+        .cards {
+            margin-top: 5%;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 2%;
+            .card1 {
+                img {
+                    width: 100%;
+                }
+            }
+            .card2 {
+                font-family: $cardo;
+                display: flex; justify-content: center; flex-direction: column; row-gap: 5%;
+                h3 {
+                    color: $mainbgcolor;
+                    font-size: 24px;
+                }
+                h2 {
+                    color: $primarycolor;
+                }
+                h5 {
+                    width: 85%;
+                    color: #969AA0;
+                    font-family: $inter();
+                    font-size: 1rem;
+                    font-weight: 400;
+                }
+                h4 {
+                    display: flex; align-items: center; gap: 5%;
+                    .pb {
+                        background-color: $primarycolor;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                    }
+                }
+                .tugmalar {
+                    width: 70%;
+                    text-align: center;
+                    @include tugma();
+                    padding: 3%;
+                    border: 2px solid $primarycolor;
+                    &:hover {
+                        background-color: $primarycolor; 
+                    }
+                }
+                @media (max-width: 550px) {
+                    align-items: center;
+                    & h4 {
+                        width: 90%;
+                        text-align: center;
+                        // background-color: red;
+                    }
+                }
+            }
+            @media (max-width: 1000px) {
+                grid-template-columns: 1fr 1fr;
+                gap: 10%;
+                .card2 {
+                    width: 100%;
+                    h5 {
+                        width: 75%;
+                    }
+                }
+            }
+            @media (max-width: 800px) {
+                gap: 10%;
+                .card2 {
+                    width: 100%;
+                    h5 {
+                        width: 75%;
+                    }
+                }
+            }
+            @media (max-width: 550px) {
+                grid-template-columns: 1fr; 
+                gap: 5%;
+                .card2 {
+                    padding-left: 5%;
+                    line-height: 220%;
+                    h5 {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+    .about {
+
+        .section1 {
+            width: 100%;
+            height: 100%;
+        }
+        .section2 {
+            .title {
+                @include titles();
+            }
+            .line{
+                @include line();
+            }
+        }
+    }
+}
